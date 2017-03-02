@@ -2,6 +2,9 @@ package constant;
 
 public class ConstantStuff {
 
+    // final prevents multiple writes to the *variable*
+    // but since most variables are pointers, this 
+    // does *not* prevent mutation of the referee object
     final String fred; // MUST be assigned exactly once prior to completion of initialization
 
     public ConstantStuff() {

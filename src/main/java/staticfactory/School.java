@@ -13,6 +13,9 @@ public class School {
                 Student.ofNameCourses("Sheila", "Engineering", "Tribology", "Astro Physics")
         ));
         school.forEach(s -> System.out.println("- " + s));
+        // Calling a factory encapsulates changes related to 
+        // whether we have a singleton or new object. A constructor
+        // *must* provide a new object every time
         school.sort(Student.getEnthusiamComparator());
         System.out.println("------------------------------");
         school.forEach(s -> System.out.println("- " + s));

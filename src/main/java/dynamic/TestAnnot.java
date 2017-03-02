@@ -9,6 +9,11 @@ public class TestAnnot {
     public void aMethod() {
         System.out.println("This is aMethod");
     }
+    
+    @DoStuff
+    private void anotherMethod() {
+        System.out.println("A private method");
+    }
 
     @Override
     public String toString() {

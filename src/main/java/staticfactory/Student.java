@@ -10,9 +10,14 @@ public class Student {
     private String name;
     private List<String> courses;
 
+    // private constructor avoids others being able to use it
     private Student() {
     }
 
+    // static factory can return new or old object, this type
+    // or any assignment-compatible type, and allows different
+    // behavior names, avoiding need for overloading with different
+    // argument type lists
     public static Student ofNameCourses(String name, String... courses) {
         if (name == null) {
             throw new IllegalArgumentException("Requires non null name");

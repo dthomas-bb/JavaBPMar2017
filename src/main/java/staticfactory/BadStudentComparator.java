@@ -2,6 +2,8 @@ package staticfactory;
 
 import java.util.Comparator;
 
+// This comparator is "in the wrong place", it should be in the
+// Student class
 public class BadStudentComparator implements Comparator<Student> {
 
     @Override

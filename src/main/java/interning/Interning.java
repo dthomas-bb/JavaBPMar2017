@@ -9,6 +9,7 @@ public class Interning {
         String s4 = "llo";
         String s5 = s3 + s4;
         System.out.println("s2 == s5 " + (s2 == s5));
+        // find / put this into the constant pool
         s5 = s5.intern();
         System.out.println("s2 == s5 " + (s2 == s5));
     }
