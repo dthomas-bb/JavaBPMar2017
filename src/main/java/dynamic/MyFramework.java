@@ -1,7 +1,7 @@
 package dynamic;
 
 import java.io.FileReader;
-import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Properties;
 
@@ -23,6 +23,26 @@ public class MyFramework {
 //        System.setSecurityManager(new SecurityManager());
 
         System.out.println("Loaded: " + obj);
+        
+        // Find all fields
+        Field [] fields = cl.getDeclaredFields();
+        for (Field f : fields) {
+            SetStuff ss = f.getAnnotation(SetStuff.class);
+            if (ss != null) {
+                f.setAccessible(true);
+                
+                if (f.getType() == String.class) {
+                    System.out.println("Setting a string");
+                    f.set(obj, "This is a string value write");
+                } else if (f.getType() == Integer.TYPE) {
+                    System.out.println("Setting an int");
+                    f.setInt(obj, 42);
+                } else {
+                    System.out.println("Unsupported field type");
+                }
+            }
+        }
+        
         // getMethods does not see private, but does see inherited
 //        Method [] methods = cl.getMethods();
         // getDeclaredMethods sees all "my" methods, but not inherted stuff

@@ -2,8 +2,10 @@ package dynamic;
 
 //@DoStuff
 public class TestAnnot {
-//    @DoStuff
-    private int value = 99;
+    @SetStuff
+    private String value = "unset";
+    @SetStuff
+    private int intVal = 0;
     
     @DoStuff
     public void aMethod() {
@@ -15,9 +17,15 @@ public class TestAnnot {
         System.out.println("A private method");
     }
 
+    @DoStuff
+    public void show() {
+        System.out.println("Object has: " + toString());
+    }
+
     @Override
     public String toString() {
-        return "TestAnnot{" + "value=" + value + '}';
+        return "TestAnnot{" + "value=" + value + ", intVal=" + intVal + '}';
     }
+    
     
 }
