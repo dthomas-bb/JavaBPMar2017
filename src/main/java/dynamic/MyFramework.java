@@ -33,7 +33,8 @@ public class MyFramework {
                 
                 if (f.getType() == String.class) {
                     System.out.println("Setting a string");
-                    f.set(obj, "This is a string value write");
+                    String newVal = ss.value();
+                    f.set(obj, newVal);
                 } else if (f.getType() == Integer.TYPE) {
                     System.out.println("Setting an int");
                     f.setInt(obj, 42);

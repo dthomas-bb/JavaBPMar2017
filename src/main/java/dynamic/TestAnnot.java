@@ -2,7 +2,7 @@ package dynamic;
 
 //@DoStuff
 public class TestAnnot {
-    @SetStuff
+    @SetStuff(value = "A textual value...")
     private String value = "unset";
     @SetStuff
     private int intVal = 0;
